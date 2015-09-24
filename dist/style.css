@@ -15,6 +15,8 @@ html {
 
 header {
     width: calc(4 * 25%);
+    height: 500px;
+    position: relative;
 }
 
 header h1 {
@@ -23,10 +25,20 @@ header h1 {
     opacity:0.8;
     filter: alpha(opacity=80);
 }
-h2 {
+header h4 {
 	background: rgba(153, 85, 102, 0.3);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c995566', endColorstr='#4c995566');
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-right: -50%;
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 }
-:root h2 {
+:root header h4 {
   filter: none\9;
+}
+li:nth-last-child(n+3), li:nth-last-child(n+3) ~ li {
+  border: 1px solid red;
 }

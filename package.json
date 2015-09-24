@@ -9,6 +9,8 @@
     "cssgrace": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-postcss": "^6.0.0",
+    "postcss-center": "^1.0.0",
+    "postcss-cssstats": "^1.0.0",
     "precss": "^1.2.3",
     "rucksack-css": "^0.8.2"
   },

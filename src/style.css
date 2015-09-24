@@ -1,5 +1,7 @@
 $blue: #056ef0;
+$red: red;
 $column: 25%;
+$height: 500px;
 
 /** Neat RuckSack font features! ***/
 html {
@@ -9,6 +11,8 @@ html {
 
 header {
     width: calc(4 * $column);
+    height: $height;
+    position: relative;
 }
 
 header h1 {
@@ -16,6 +20,11 @@ header h1 {
     width: $column;
     opacity:0.8;
 }
-h2 {
+header h4 {
 	background: rgba(153, 85, 102, 0.3);
+	top:center;
+	left:center;
+}
+li:at-least(3) {
+  border: 1px solid $red;
 }
