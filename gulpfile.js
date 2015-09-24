@@ -14,6 +14,8 @@ var postcsscenter = require('postcss-center');
 /* https://github.com/cssstats/postcss-cssstats */
 var cssstats = require('postcss-cssstats');
 var postcss = require('gulp-postcss');
+/* http://cssnano.co/usage/ */
+var cssnano = require('cssnano');
 
 gulp.task('default', function(){
 	var processors = [ 
@@ -21,8 +23,9 @@ gulp.task('default', function(){
 		rucksack(),
 		postcsscenter(),
 		autoprefixer( { browsers: ['> 1%'] } ),
-		//Run this last to fix any older browser issues possible 
-		require('cssgrace')
+		//Run these last
+		require('cssgrace'),
+		cssnano()
 		];
 	return gulp.src('./src/*.css')
 	.pipe(postcss(processors))
