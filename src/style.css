@@ -28,3 +28,6 @@ header h4 {
 li:at-least(3) {
   border: 1px solid $red;
 }
+img {
+	image-size:responsive;
+}
