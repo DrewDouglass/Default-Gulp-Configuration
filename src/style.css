@@ -1,0 +1,21 @@
+$blue: #056ef0;
+$column: 25%;
+
+/** Neat RuckSack font features! ***/
+html {
+  font-size: responsive 12px 21px;
+  font-range: 420px 1280px;
+}
+
+header {
+    width: calc(4 * $column);
+}
+
+header h1 {
+    background: $blue;
+    width: $column;
+    opacity:0.8;
+}
+h2 {
+	background: rgba(153, 85, 102, 0.3);
+}

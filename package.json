@@ -1,0 +1,20 @@
+{
+  "name": "post-css-build",
+  "version": "1.0.0",
+  "description": "My PostCSS build tools and files.",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "cssgrace": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-postcss": "^6.0.0",
+    "precss": "^1.2.3",
+    "rucksack-css": "^0.8.2"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "author": "Drew Douglass",
+  "license": "ISC"
+}
