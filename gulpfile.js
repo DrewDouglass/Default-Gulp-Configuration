@@ -14,8 +14,6 @@ var postcsscenter = require('postcss-center');
 /* https://github.com/cssstats/postcss-cssstats */
 var cssstats = require('postcss-cssstats');
 var postcss = require('gulp-postcss');
-/* http://cssnano.co/usage/ */
-var cssnano = require('cssnano');
 /* https://github.com/azat-io/postcss-responsive-images */
 var responsiveimages = require('postcss-responsive-images');
 
@@ -26,9 +24,8 @@ gulp.task('default', function(){
 		postcsscenter(),
 		autoprefixer( { browsers: ['> 1%'] } ),
 		responsiveimages(),
-		//Run these last
-		require('cssgrace'),
-		cssnano()
+		//Run last
+		require('cssgrace')
 		];
 	return gulp.src('./src/*.css')
 	.pipe(postcss(processors))
