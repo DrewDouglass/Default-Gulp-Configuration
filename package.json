@@ -16,6 +16,7 @@
     "postcss-cssstats": "^1.0.0",
     "postcss-nested": "^1.0.0",
     "postcss-responsive-images": "^1.0.1",
+    "postcss-write-svg": "^1.1.2",
     "precss": "^1.2.3",
     "rucksack-css": "^0.8.2"
   },

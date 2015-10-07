@@ -22,6 +22,8 @@ var responsiveimages = require('postcss-responsive-images');
 var oldie = require('oldie');
 /* https://github.com/ben-eb/perfectionist */
 var perfectionist = require('perfectionist');
+/* https://github.com/jonathantneal/postcss-write-svg */
+var postcsswritesvg = require('postcss-write-svg');
 
 gulp.task('default', function(){
 	var processors = [ 
@@ -31,8 +33,10 @@ gulp.task('default', function(){
 		postcsscenter(),
 		autoprefixer( { browsers: ['> 1%'] } ),
 		responsiveimages(),
-		//Run last
+		/***!!Run these last!!***/
 		require('cssgrace'),
+		//write svg conflicts with cssgrace if run before it.
+		postcsswritesvg(),
 		perfectionist()
 		];
 	return gulp.src('./src/*.css')

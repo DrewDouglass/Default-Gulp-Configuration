@@ -59,6 +59,11 @@ ol li {
     color: #056ef0;
 }
 
+.placeholder {
+    position: relative;
+    height: 500px;
+}
+
 .placeholder img {
     position: absolute;
     left: 50%;
@@ -66,4 +71,10 @@ ol li {
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
+}
+
+.arrow {
+    height: 124px;
+    text-indent: 100px;
+    background-image: url("data:image/svg+xml;charset=utf8, <svg%20xmlns%3D\"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg\"><polygon%20fill%3D\"blue\"%20points%3D\"0%2020%2C%2060%2020%2C%2060%200%2C%20100%2050%2C%2060%20100%2C%2060%2080%2C%200%2080\"%2F><%2Fsvg>");
 }

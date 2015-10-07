@@ -37,8 +37,19 @@ ol {
 	}
 }
 .placeholder {
-	
+	position: relative;
+	height:$height;
 	img {
 		left:center;
 	}
+}
+.arrow {
+	height: 124px;
+	text-indent: 100px;
+    @svg {
+        polygon {
+            fill: blue;
+            points: 0 20, 60 20, 60 0, 100 50, 60 100, 60 80, 0 80;
+        }
+    }
 }
