@@ -31,3 +31,8 @@ li:at-least(3) {
 img {
 	image-size:responsive;
 }
+ol {
+	li {
+		color:$blue;
+	}
+}

@@ -5,6 +5,8 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 /* https://github.com/jonathantneal/precss */
 var precss = require('precss');
+/* https://github.com/postcss/postcss-nested */
+var postcssnested = require('postcss-nested');
 /* http://simplaio.github.io/rucksack/ */
 var rucksack = require('rucksack-css');
 /* https://github.com/cssdream/cssgrace */
@@ -19,6 +21,7 @@ var responsiveimages = require('postcss-responsive-images');
 
 gulp.task('default', function(){
 	var processors = [ 
+		postcssnested(),
 		precss(),  
 		rucksack(),
 		postcsscenter(),
