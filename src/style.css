@@ -36,3 +36,9 @@ ol {
 		color:$blue;
 	}
 }
+.placeholder {
+	
+	img {
+		left:center;
+	}
+}

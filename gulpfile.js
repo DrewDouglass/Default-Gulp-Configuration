@@ -18,6 +18,8 @@ var cssstats = require('postcss-cssstats');
 var postcss = require('gulp-postcss');
 /* https://github.com/azat-io/postcss-responsive-images */
 var responsiveimages = require('postcss-responsive-images');
+/* https://github.com/jonathantneal/oldie */
+var oldie = require('oldie');
 
 gulp.task('default', function(){
 	var processors = [ 
@@ -47,4 +49,16 @@ gulp.task('cssstats', function() {
                 )
             ])
         );
+});
+
+//Run only after the main style has been generated and only IF you're having issues
+// in IE8 or lower.
+gulp.task('ie8', function(){
+	return gulp.src('./dist/*.css').pipe(
+        postcss([
+            require('oldie')({ /* options */ })
+        ])
+    ).pipe(
+        gulp.dest('./dist/ie/')
+    );
 });

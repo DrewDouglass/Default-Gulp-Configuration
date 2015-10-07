@@ -2,19 +2,9 @@
 html {
   font-size: calc(12px + 9 * ( (100vw - 420px) / 860));
 }
-@media screen and (min-width: 1280px) {
-  html {
-    font-size: 21px;
-  }
-}
-@media screen and (max-width: 420px) {
-  html {
-    font-size: 12px;
-  }
-}
 
 header {
-    width: calc(4 * 25%);
+    width: 100%;
     height: 500px;
     position: relative;
 }
@@ -22,7 +12,7 @@ header {
 header h1 {
     background: #056ef0;
     width: 25%;
-    opacity:0.8;
+    filter: alpha(opacity=80);
     filter: alpha(opacity=80);
 }
 header h4 {
@@ -36,7 +26,7 @@ header h4 {
 	    -ms-transform: translate(-50%, -50%);
 	        transform: translate(-50%, -50%);
 }
-:root header h4 {
+html header h4 {
   filter: none\9;
 }
 li:nth-last-child(n+3), li:nth-last-child(n+3) ~ li {
@@ -49,12 +39,4 @@ img {
 }
 ol li {
   color:#056ef0;
-}
-.placeholder img {
-  position: absolute;
-  left:50%;
-  margin-right: -50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
