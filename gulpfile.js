@@ -20,6 +20,8 @@ var postcss = require('gulp-postcss');
 var responsiveimages = require('postcss-responsive-images');
 /* https://github.com/jonathantneal/oldie */
 var oldie = require('oldie');
+/* https://github.com/ben-eb/perfectionist */
+var perfectionist = require('perfectionist');
 
 gulp.task('default', function(){
 	var processors = [ 
@@ -30,7 +32,8 @@ gulp.task('default', function(){
 		autoprefixer( { browsers: ['> 1%'] } ),
 		responsiveimages(),
 		//Run last
-		require('cssgrace')
+		require('cssgrace'),
+		perfectionist()
 		];
 	return gulp.src('./src/*.css')
 	.pipe(postcss(processors))
