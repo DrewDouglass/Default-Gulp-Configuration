@@ -2,9 +2,10 @@ $blue: #056ef0;
 $red: red;
 $column: 25%;
 $height: 500px;
+$gray: #222;
 
-/** Neat RuckSack font features! ***/
 html {
+  font-size:16px;
   font-size: responsive 12px 21px;
   font-range: 420px 1280px;
 }
@@ -17,11 +18,12 @@ header {
 
 header h1 {
     background: $blue;
-    width: $column;
+    width: calc($column * 2);
     opacity:0.8;
+    color: $gray;
 }
-header h4 {
-	background: rgba(153, 85, 102, 0.3);
+header h4{
+	background: rgba(255,255,255, 0.7);
 	top:center;
 	left:center;
 }

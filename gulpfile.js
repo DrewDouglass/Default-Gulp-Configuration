@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
+var watch = require('gulp-watch');
 
 /* https://github.com/postcss/autoprefixer */
 var autoprefixer = require('autoprefixer');
@@ -24,6 +25,10 @@ var oldie = require('oldie');
 var perfectionist = require('perfectionist');
 /* https://github.com/jonathantneal/postcss-write-svg */
 var postcsswritesvg = require('postcss-write-svg');
+/* https://github.com/jonathantneal/postcss-unroot */
+var postcssunroot = require('postcss-unroot');
+/* https://github.com/postcss/postcss-calc */
+var calc = require("postcss-calc")
 
 gulp.task('default', function(){
 	var processors = [ 
@@ -31,15 +36,18 @@ gulp.task('default', function(){
 		precss(),  
 		rucksack(),
 		postcsscenter(),
+		calc(),
 		autoprefixer( { browsers: ['> 1%'] } ),
 		responsiveimages(),
 		/***!!Run these last!!***/
 		require('cssgrace'),
+		postcssunroot(),
 		//write svg conflicts with cssgrace if run before it.
 		postcsswritesvg(),
 		perfectionist()
 		];
 	return gulp.src('./src/*.css')
+	.pipe(watch('./src/*.css'))
 	.pipe(postcss(processors))
 	.pipe(gulp.dest('./dist'));
 });
