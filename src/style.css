@@ -4,6 +4,41 @@ $column: 25%;
 $height: 500px;
 $gray: #222;
 
+$break-small: 768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-america: 1776px;
+
+$base-fs: 16px;
+$fs-small: 12px;
+$base-blockquote: 23px;
+
+$fw-light: 100;
+$fw-regular: normal;
+$fw-medium: 500;
+$fw-bold: 900;
+
+$default-border: 1px solid rgba(0,0,0,0.25);
+
+@define-mixin cover {
+  background-repeat: no-repeat;
+  background-position: center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width:100%;
+  -ms-behavior: url(/backgroundsize.min.htc);
+}
+
+@define-mixin center $name {
+    @media screen and (min-width: $break-small) {
+      width:$(name)%;
+      margin-left:auto;
+      margin-right:auto;
+  }
+}
+
 html {
   font-size:16px;
   font-size: responsive 12px 21px;
