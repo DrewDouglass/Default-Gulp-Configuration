@@ -21,30 +21,37 @@ var postcss = require('gulp-postcss');
 var responsiveimages = require('postcss-responsive-images');
 /* https://github.com/jonathantneal/oldie */
 var oldie = require('oldie');
-/* https://github.com/ben-eb/perfectionist */
-var perfectionist = require('perfectionist');
 /* https://github.com/jonathantneal/postcss-write-svg */
 var postcsswritesvg = require('postcss-write-svg');
 /* https://github.com/jonathantneal/postcss-unroot */
 var postcssunroot = require('postcss-unroot');
 /* https://github.com/postcss/postcss-calc */
 var calc = require("postcss-calc")
+var postcsscircle = require('postcss-circle');
+var postcsstriangle = require('postcss-triangle');
+/* https://www.npmjs.com/package/postcss-image-sizes */
+var imageSizes = require('postcss-image-sizes');
+/* https://github.com/iamvdo/postcss-opacity */
+var cssOpacity = require('postcss-opacity');
 
 gulp.task('default', function(){
 	var processors = [ 
 		postcssnested(),
 		precss(),  
-		rucksack(),
+		rucksack({ fallbacks: true }),
 		postcsscenter(),
 		calc(),
-		autoprefixer( { browsers: ['> 1%'] } ),
+		postcsscircle(),
+		postcsstriangle(),
+		imageSizes({assetsPath: '/'}),
+		cssOpacity(),
+		autoprefixer( { browsers: ['> 1%', 'last 6 version'] } ),
 		responsiveimages(),
 		/***!!Run these last!!***/
-		require('cssgrace'),
+		//require('cssgrace'),
 		postcssunroot(),
 		//write svg conflicts with cssgrace if run before it.
-		postcsswritesvg(),
-		perfectionist()
+		postcsswritesvg()
 		];
 	return gulp.src('./src/*.css')
 	.pipe(watch('./src/*.css'))
