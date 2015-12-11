@@ -7,7 +7,7 @@ without any arguments.
 # Usage
 ### Default
 	gulp
-Main functions. Will compile CSS files and run them through packages listed below.
+Main functions. Will compile CSS files and run them through packages listed below. Also runs gulp watch, so this only needs to be run once. `ctrl+c` to quit.
 
 ### ie8
 	gulp ie8
