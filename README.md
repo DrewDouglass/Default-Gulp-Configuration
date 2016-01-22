@@ -45,3 +45,13 @@ By default, the styles are run through the following packages unless otherwise n
 * https://github.com/jonathantneal/postcss-unroot 
 
 * https://github.com/postcss/postcss-calc 
+
+* https://github.com/jedmao/postcss-circle
+
+* https://github.com/jedmao/postcss-triangle
+
+* https://www.npmjs.com/package/postcss-image-sizes
+
+* https://github.com/iamvdo/postcss-opacity
+
+* https://github.com/archana-s/postcss-flexbox
