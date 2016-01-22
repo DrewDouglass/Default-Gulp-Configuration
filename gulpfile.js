@@ -33,30 +33,33 @@ var postcsstriangle = require('postcss-triangle');
 var imageSizes = require('postcss-image-sizes');
 /* https://github.com/iamvdo/postcss-opacity */
 var cssOpacity = require('postcss-opacity');
+/* https://github.com/archana-s/postcss-flexbox */
+var postcssflexbox = require('postcss-flexbox');
 
 gulp.task('default', function(){
-	var processors = [ 
-		postcssnested(),
-		precss(),  
-		rucksack({ fallbacks: true }),
-		postcsscenter(),
-		calc(),
-		postcsscircle(),
-		postcsstriangle(),
-		imageSizes({assetsPath: '/'}),
-		cssOpacity(),
-		autoprefixer( { browsers: ['> 1%', 'last 6 version'] } ),
-		responsiveimages(),
-		/***!!Run these last!!***/
-		//require('cssgrace'),
-		postcssunroot(),
-		//write svg conflicts with cssgrace if run before it.
-		postcsswritesvg()
-		];
-	return gulp.src('./src/*.css')
-	.pipe(watch('./src/*.css'))
-	.pipe(postcss(processors))
-	.pipe(gulp.dest('./dist'));
+    var processors = [ 
+        postcssnested(),
+        precss(),  
+        rucksack({ fallbacks: true }),
+        postcsscenter(),
+        calc(),
+        postcsscircle(),
+        postcsstriangle(),
+        imageSizes({assetsPath: '/'}),
+        cssOpacity(),
+        postcssflexbox(),
+        autoprefixer( { browsers: ['> 1%', 'last 6 version'] } ),
+        responsiveimages(),
+        /***!!Run these last!!***/
+        //require('cssgrace'),
+        postcssunroot(),
+        //write svg conflicts with cssgrace if run before it.
+        postcsswritesvg()
+        ];
+    return gulp.src('./src/*.css')
+    .pipe(watch('./src/*.css'))
+    .pipe(postcss(processors))
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('cssstats', function() {
@@ -76,7 +79,7 @@ gulp.task('cssstats', function() {
 //Run only after the main style has been generated and only IF you're having issues
 // in IE8 or lower.
 gulp.task('ie8', function(){
-	return gulp.src('./dist/*.css').pipe(
+    return gulp.src('./dist/*.css').pipe(
         postcss([
             require('oldie')({ /* options */ })
         ])

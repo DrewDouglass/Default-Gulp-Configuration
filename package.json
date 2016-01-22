@@ -19,6 +19,7 @@
     "postcss-center": "^1.0.0",
     "postcss-circle": "^1.0.0",
     "postcss-cssstats": "^1.0.0",
+    "postcss-flexbox": "^1.0.2",
     "postcss-image-sizes": "0.0.3",
     "postcss-nested": "^1.0.0",
     "postcss-opacity": "^3.0.0",
