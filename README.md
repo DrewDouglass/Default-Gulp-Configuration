@@ -28,8 +28,6 @@ By default, the styles are run through the following packages unless otherwise n
 
 * http://simplaio.github.io/rucksack/ 
 
-* https://github.com/cssdream/cssgrace 
-
 * https://github.com/jedmao/postcss-center 
 
 * https://github.com/cssstats/postcss-cssstats 
@@ -37,8 +35,6 @@ By default, the styles are run through the following packages unless otherwise n
 * https://github.com/azat-io/postcss-responsive-images 
 
 * https://github.com/jonathantneal/oldie (**Only run if gulp ie8 is used**)
-
-* https://github.com/ben-eb/perfectionist 
 
 * https://github.com/jonathantneal/postcss-write-svg 
 
