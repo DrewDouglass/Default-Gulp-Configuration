@@ -5,6 +5,14 @@ Please view gulpfile.js or packages.json for required modules. Please be careful
 without any arguments.
 
 # Usage
+
+### Install 
+* Install gulp
+* cd to your directory
+* run `npm install`
+* grab a beer
+* code shit
+
 ### Default
 	gulp
 Main functions. Will compile CSS files and run them through packages listed below. Also runs gulp watch, so this only needs to be run once. `ctrl+c` to quit.
