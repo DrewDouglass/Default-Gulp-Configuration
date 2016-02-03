@@ -10,8 +10,6 @@ var precss = require('precss');
 var postcssnested = require('postcss-nested');
 /* http://simplaio.github.io/rucksack/ */
 var rucksack = require('rucksack-css');
-/* https://github.com/cssdream/cssgrace */
-var cssgrace = require('cssgrace');
 /* https://github.com/jedmao/postcss-center */
 var postcsscenter = require('postcss-center');
 /* https://github.com/cssstats/postcss-cssstats */
@@ -35,6 +33,8 @@ var imageSizes = require('postcss-image-sizes');
 var cssOpacity = require('postcss-opacity');
 /* https://github.com/archana-s/postcss-flexbox */
 var postcssflexbox = require('postcss-flexbox');
+/* https://github.com/zhouwenbin/postcss-animation */
+var postcssanimation = require('postcss-animation');
 
 gulp.task('default', function(){
     var processors = [ 
@@ -48,13 +48,11 @@ gulp.task('default', function(){
         imageSizes({assetsPath: '/'}),
         cssOpacity(),
         postcssflexbox(),
+        postcssanimation(),
+        postcsswritesvg(),
         autoprefixer( { browsers: ['> 1%', 'last 6 version'] } ),
         responsiveimages(),
-        /***!!Run these last!!***/
-        //require('cssgrace'),
         postcssunroot(),
-        //write svg conflicts with cssgrace if run before it.
-        postcsswritesvg()
         ];
     return gulp.src('./src/*.css')
     .pipe(watch('./src/*.css'))

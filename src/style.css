@@ -74,35 +74,45 @@ header h1 {
     color: $gray;
 }
 header h4{
-	background: rgba(255,255,255, 0.7);
-	top:center;
-	left:center;
+  background: rgba(255,255,255, 0.7);
+  top:center;
+  left:center;
 }
 li:at-least(3) {
   border: 1px solid $red;
 }
 img {
-	image-size:responsive;
+  image-size:responsive;
 }
 ol {
-	li {
-		color:$blue;
-	}
+  li {
+    color:$blue;
+  }
 }
 .placeholder {
-	position: relative;
-	height:$height;
-	img {
-		left:center;
-	}
+  position: relative;
+  height:$height;
+  img {
+    left:center;
+  }
 }
-.arrow {
-	height: 124px;
-	text-indent: 100px;
-    @svg {
-        polygon {
-            fill: blue;
-            points: 0 20, 60 20, 60 0, 100 50, 60 100, 60 80, 0 80;
-        }
+.circle {
+    circle: 100px blue;
+    margin:100px auto;
+    animation-name: flip;
+    animation: flip 3s infinite ease;
+}
+.hoverme {
+    circle: 300px red;
+    color:#fff;
+    margin:100px auto;
+    animation-name:pulse;
+    position: relative;
+    &:hover {
+        animation: pulse 2s infinite ease;
+    }
+    span {
+        top:center;
+        left:center;
     }
 }
