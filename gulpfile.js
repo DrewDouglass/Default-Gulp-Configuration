@@ -49,7 +49,6 @@ gulp.task('default', function(){
         cssOpacity(),
         postcssflexbox(),
         postcssanimation(),
-        postcsswritesvg(),
         autoprefixer( { browsers: ['> 1%', 'last 6 version'] } ),
         responsiveimages(),
         postcssunroot(),
