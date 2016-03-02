@@ -35,9 +35,12 @@ var cssOpacity = require('postcss-opacity');
 var postcssflexbox = require('postcss-flexbox');
 /* https://github.com/zhouwenbin/postcss-animation */
 var postcssanimation = require('postcss-animation');
+/* https://github.com/arccoza/postcss-if-media */
+var postcssifmedia = require('postcss-if-media');
 
 gulp.task('default', function(){
     var processors = [ 
+        postcssifmedia(),
         postcssnested(),
         precss(),  
         rucksack({ fallbacks: true }),
