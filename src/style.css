@@ -109,7 +109,7 @@ ol {
     animation-name:pulse;
     position: relative;
     &:hover {
-        animation: pulse 2s infinite ease;
+        animation: pulse 2s infinite ease ?if media (min-width: $break-small);
     }
     span {
         top:center;
