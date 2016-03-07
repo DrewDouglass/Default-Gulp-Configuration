@@ -20,6 +20,7 @@
     "postcss-center": "^1.0.0",
     "postcss-circle": "^1.0.0",
     "postcss-cssstats": "^1.0.0",
+    "postcss-easings": "^0.3.0",
     "postcss-flexbox": "^1.0.2",
     "postcss-if-media": "^1.0.1",
     "postcss-image-sizes": "0.0.3",

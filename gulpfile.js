@@ -37,6 +37,8 @@ var postcssflexbox = require('postcss-flexbox');
 var postcssanimation = require('postcss-animation');
 /* https://github.com/arccoza/postcss-if-media */
 var postcssifmedia = require('postcss-if-media');
+/* https://github.com/postcss/postcss-easings */
+var postcsseasings = require('postcss-easings');
 
 gulp.task('default', function(){
     var processors = [ 
@@ -45,6 +47,7 @@ gulp.task('default', function(){
         precss(),  
         rucksack({ fallbacks: true }),
         postcsscenter(),
+        postcsseasings(),
         calc(),
         postcsscircle(),
         postcsstriangle(),
