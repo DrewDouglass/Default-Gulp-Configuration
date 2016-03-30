@@ -46,6 +46,14 @@ $default-border: 1px solid rgba(0,0,0,0.25);
     padding-right: 0;
   } 
 }
+@define-mixin reverse-padding-mobile {
+  padding-left:0px;
+  padding-right:0px;
+  @media screen and (min-width:$break-small) {
+    padding-left:15px;
+    padding-right: 15px;
+  } 
+}
 @define-mixin margin-mobile {
   margin-left:15px;
   margin-right:15px;
@@ -100,7 +108,7 @@ ol {
     circle: 100px blue;
     margin:100px auto;
     animation-name: flip;
-    animation: flip 3s infinite ease;
+    animation: flip 3s infinite easeInOutBack;
 }
 .hoverme {
     circle: 300px red;
