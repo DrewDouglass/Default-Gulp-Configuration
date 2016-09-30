@@ -39,8 +39,16 @@ var postcssanimation = require('postcss-animation');
 var postcssifmedia = require('postcss-if-media');
 /* https://github.com/postcss/postcss-easings */
 var postcsseasings = require('postcss-easings');
+/* https://www.browsersync.io/docs/gulp */
+var browserSync = require('browser-sync').create();
 
-gulp.task('default', function(){
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: "localhost:1999/honorflight"
+    });
+});
+
+gulp.task('default', ['browser-sync'], function(){
     var processors = [ 
         postcssifmedia(),
         postcssnested(),
@@ -62,7 +70,8 @@ gulp.task('default', function(){
     return gulp.src('./src/*.css')
     .pipe(watch('./src/*.css'))
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('cssstats', function() {
