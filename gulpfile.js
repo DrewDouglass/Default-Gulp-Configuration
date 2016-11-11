@@ -70,7 +70,7 @@ gulp.task('default', ['browser-sync'], function(){
     return gulp.src('./src/*.css')
     .pipe(watch('./src/*.css'))
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist/'))
     .pipe(browserSync.stream());
 });
 
