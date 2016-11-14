@@ -1,21 +1,23 @@
 # Gulp and PostCSS.
 ## The new hotness.
 
-Please view gulpfile.js or packages.json for required modules. Please be careful, this is setup to run by just executing the gulp command
-without any arguments.
+Please view gulpfile.js or packages.json for required modules.
 
 # Usage
 
 ### Install 
-* Install gulp
 * cd to your directory
 * run `npm install`
 * grab a beer
+* run `gulp`
 * code shit
 
 ### Default
 	gulp
 Main functions. Will compile CSS files and run them through packages listed below. Also runs gulp watch, so this only needs to be run once. `ctrl+c` to quit.
+
+## BrowserSync 
+Change or remove the `proxy` argument if using MAMP/LAMP/WAMP server.
 
 ### ie8
 	gulp ie8
