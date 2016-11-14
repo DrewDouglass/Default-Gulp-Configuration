@@ -41,6 +41,8 @@ var postcssifmedia = require('postcss-if-media');
 var postcsseasings = require('postcss-easings');
 /* https://www.browsersync.io/docs/gulp */
 var browserSync = require('browser-sync').create();
+/* http://cssnano.co/ */
+var cssnano = require('cssnano');
 
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -63,14 +65,35 @@ gulp.task('default', ['browser-sync'], function(){
         cssOpacity(),
         postcssflexbox(),
         postcssanimation(),
-        autoprefixer( { browsers: ['> 0%', 'last 25 version'] } ),
+        autoprefixer( { browsers: ['> 0%', 'last 30 version'] } ),
         responsiveimages(),
         postcssunroot(),
         ];
+    var process_minify = [
+        postcssifmedia(),
+        postcssnested(),
+        precss(),  
+        rucksack({ fallbacks: true }),
+        postcsscenter(),
+        postcsseasings(),
+        calc(),
+        postcsscircle(),
+        postcsstriangle(),
+        imageSizes({assetsPath: '/'}),
+        cssOpacity(),
+        postcssflexbox(),
+        postcssanimation(),
+        autoprefixer( { browsers: ['> 0%', 'last 30 version'] } ),
+        responsiveimages(),
+        postcssunroot(),
+        cssnano(),
+    ];
     return gulp.src('./src/*.css')
     .pipe(watch('./src/*.css'))
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./dist'))
+    .pipe(postcss(process_minify))
+    .pipe(gulp.dest('./dist/minify'))
     .pipe(browserSync.stream());
 });
 
